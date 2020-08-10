@@ -26,7 +26,7 @@ int indexOfFirstOccurance(int arr[],int n,int x){
     return -1;
 }
 int main(){
-    int arr[]={1,10,10,10,20,20,20,40};
+    int arr[]={1,10,10,10,20,20,20};
     int n=sizeof(arr)/sizeof(arr[0]);
     //finding first of 20 
     int x=20;
