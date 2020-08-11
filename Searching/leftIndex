@@ -1,0 +1,50 @@
+
+#include <iostream>
+using namespace std;
+
+
+//The task is to complete the function leftIndex() which takes the array arr[], its size N and an integer X as inputs and returns the index of leftmost occurrence of X in given input array. It returns -1 if element is not present in the array.
+// Function to find element in sorted array
+
+int leftIndex(int n, int arr[], int x){
+    
+    // Your code here
+    int low=0,high=n-1;
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(arr[mid]==x&&(arr[mid-1]!=arr[mid]||mid==0)) return mid;
+        else if(arr[mid]==x||arr[mid]>x) high=mid-1;
+        else low=mid+1;
+    }
+    return -1;
+}
+
+
+
+// Driver Code
+int main() {
+	
+	// Testcase input
+	int testcases;
+	cin >> testcases;
+    
+    // Looping through all testcases
+	while(testcases--){
+	    int sizeOfArray;
+	    cin >> sizeOfArray;
+	    
+	    int arr[sizeOfArray];
+	    
+	    // Array input
+	    for(int index = 0; index < sizeOfArray; index++){
+	        cin >> arr[index];
+	    }
+	    
+	    int elemntToSearch;
+	    cin >> elemntToSearch;
+	    
+	    cout << leftIndex(sizeOfArray, arr, elemntToSearch) << endl;
+	}
+	
+	return 0;
+} 
