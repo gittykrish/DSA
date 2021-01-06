@@ -8,6 +8,7 @@ bool isSortedArray(int arr[],int n){
 }
 int main(){
     int t;
+    
     cin>>t;
     
     while(t--){
